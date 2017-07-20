@@ -1,3 +1,23 @@
-<p>
-  home-page works!
-</p>
+<h2> Home Page </h2>
+
+<p> Neo Pets but with Camels </p>
+
+<form (ngSubmit)="doSignUp()">
+  <label for="full-name-input"> Full Name: </label>
+  <input id="full-name-input" type="text"
+    [(ngModel)]="fullNameValue" name="fullName">
+  <br>
+
+  <label for="email-input"> Email: </label>
+  <input id="email-input" type="email" placeholder="johndoe@gmail.com"
+    [(ngModel)]="emailValue" name="email">
+  <br>
+
+  <label for="password-input"> Password: </label>
+  <input id="password-input" type="password" placeholder="********"
+    [(ngModel)]="passwordValue" name="password">
+  <br>
+
+  <button> Sign Up </button>
+
+</form>
