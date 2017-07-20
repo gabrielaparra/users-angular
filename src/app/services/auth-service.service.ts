@@ -60,5 +60,14 @@ export class AuthServiceService {
     .then(res => res.json());
   }
 
-  //GET CHECK LOGIN
+  //-----------------GET CHECK LOGIN------------------
+  checkLogin() {
+    return this.http
+      .get('http://localhost:3000/api/checklogin',
+      { withCredentials: true}
+    )
+    .toPromise()
+    .then(res => res.json());
+  }
+  //--------------------------------------------------
 }
