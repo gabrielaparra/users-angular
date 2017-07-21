@@ -1,7 +1,10 @@
 <h2> Home Page </h2>
 
-<p> Neo Pets but with Camels </p>
+<h3> Neo Pets but with Camels </h3>
 
+<p *ngIf="errorMessage" class=""></p>
+
+<p> Register and Create New Camels: </p>
 <form (ngSubmit)="doSignUp()">
   <label for="full-name-input"> Full Name: </label>
   <input id="full-name-input" type="text"
@@ -19,5 +22,23 @@
   <br>
 
   <button> Sign Up </button>
+
+</form>
+
+
+<p> Sign in </p>
+<form (ngSubmit)="doLogin()">
+
+  <label for="login-email-input"> Email: </label>
+  <input id="login-email-input" type="email" placeholder="johndoe@gmail.com"
+    [(ngModel)]="loginEmail" name="login-email">
+  <br>
+
+  <label for="login-password-input"> Password: </label>
+  <input id="login-password-input" type="password" placeholder="********"
+    [(ngModel)]="loginPassword" name="login-password">
+  <br>
+
+  <button> Log In  </button>
 
 </form>
