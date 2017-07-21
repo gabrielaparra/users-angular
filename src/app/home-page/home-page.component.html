@@ -1,44 +1,55 @@
-<h2> Home Page </h2>
+<div *ngIf="isLoggedOut">
+  <h2> Home Page </h2>
 
-<h3> Neo Pets but with Camels </h3>
+  <h3> Neo Pets but with Camels </h3>
 
-<p *ngIf="errorMessage" class=""></p>
 
-<p> Register and Create New Camels: </p>
-<form (ngSubmit)="doSignUp()">
-  <label for="full-name-input"> Full Name: </label>
-  <input id="full-name-input" type="text"
+  <p> Register and Create New Camels: </p>
+
+  <p *ngIf="errorMessage" class="signupErrorMessage">
+    {{ errorMessage }}
+  </p>
+
+  <form (ngSubmit)="doSignUp()">
+    <label for="full-name-input"> Full Name: </label>
+    <input id="full-name-input" type="text"
     [(ngModel)]="fullNameValue" name="fullName">
-  <br>
+    <br>
 
-  <label for="email-input"> Email: </label>
-  <input id="email-input" type="email" placeholder="johndoe@gmail.com"
+    <label for="email-input"> Email: </label>
+    <input id="email-input" type="email" placeholder="johndoe@gmail.com"
     [(ngModel)]="emailValue" name="email">
-  <br>
+    <br>
 
-  <label for="password-input"> Password: </label>
-  <input id="password-input" type="password" placeholder="********"
+    <label for="password-input"> Password: </label>
+    <input id="password-input" type="password" placeholder="********"
     [(ngModel)]="passwordValue" name="password">
-  <br>
+    <br>
 
-  <button> Sign Up </button>
+    <button> Sign Up </button>
 
-</form>
+  </form>
 
 
-<p> Sign in </p>
-<form (ngSubmit)="doLogin()">
+  <p> Sign in </p>
 
-  <label for="login-email-input"> Email: </label>
-  <input id="login-email-input" type="email" placeholder="johndoe@gmail.com"
+  <p *ngIf="loginErrorMessage" class="loginErrorMessage">
+    {{ loginErrorMessage }}
+  </p>
+
+  <form (ngSubmit)="doLogin()">
+
+    <label for="login-email-input"> Email: </label>
+    <input id="login-email-input" type="email" placeholder="johndoe@gmail.com"
     [(ngModel)]="loginEmail" name="login-email">
-  <br>
+    <br>
 
-  <label for="login-password-input"> Password: </label>
-  <input id="login-password-input" type="password" placeholder="********"
+    <label for="login-password-input"> Password: </label>
+    <input id="login-password-input" type="password" placeholder="********"
     [(ngModel)]="loginPassword" name="login-password">
-  <br>
+    <br>
 
-  <button> Log In  </button>
+    <button> Log In  </button>
 
-</form>
+  </form>
+</div>
